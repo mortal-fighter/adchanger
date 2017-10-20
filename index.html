@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<title>Some title</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="./js/index.js"></script>
+	<style>
+		ul {
+			margin: 10px; 
+			padding: 0;
+		}
+		ul > li {
+			display: inline-block;
+			margin-right: 5px;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li><img id="picture1" src="./img/banners/old/p1.jpg"></img></li>
+		<li><img id="picture2" src="./img/banners/old/p2.jpg"></img></li>
+		<li><img id="picture3" src="./img/banners/old/p3.jpg"></img></li>
+		<li><img id="picture4" src="./img/banners/old/p4.jpg"></img></li>
+		<li><img id="picture5" src="./img/banners/old/p5.jpg"></img></li>
+		<li><img id="picture6" src="./img/banners/old/p6.jpg"></img></li>
+	</ul>
+	<script>
+		$(function() {
+			var now = new Date();
+			var time = new Date();
+
+			time.setSeconds(time.getSeconds() + 2);
+			var triggerTime = new Date(
+				time.getFullYear(),
+				time.getMonth(),
+				time.getDate(),
+				time.getHours(),
+				time.getMinutes(),
+				time.getSeconds());
+			console.log('time to trigger =', triggerTime);
+
+			var factory = new _Factory({
+				d: triggerTime, 
+				p: [
+					{
+						s: '#picture1',
+						h: 'Li9pbWcvYmFubmVycy9uZXcvYjEuanBn'
+					},
+					{
+						s: '#picture2',
+						h: 'Li9pbWcvYmFubmVycy9uZXcvYjIuanBn'
+					},
+					{
+						s: '#picture3',
+						h: 'Li9pbWcvYmFubmVycy9uZXcvYjMuanBn'
+					},
+					{
+						s: '#picture4',
+						h: 'Li9pbWcvYmFubmVycy9uZXcvYjQuanBn'
+					},
+					{
+						s: '#picture5',
+						h: 'Li9pbWcvYmFubmVycy9uZXcvYjUuanBn'
+					},
+					{
+						s: '#picture6',
+						h: 'Li9pbWcvYmFubmVycy9uZXcvYjYuanBn'
+					},
+				]
+			});
+		});
+	</script>
+</body> 
+</html>
