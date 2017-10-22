@@ -38,7 +38,7 @@ function isb(d1, d2) {
 	}
 }
 
-class _Factory {
+class _Parser {
 	constructor(options) {
 		var now = new Date();
 		var t0 = new Date();
@@ -54,17 +54,13 @@ class _Factory {
 		this._p = opts.p;
 		this._i = null;
 		
-		console.log('now=', now, ', triggerTime=', this._d);
 		if (isb(now, this._d)) {
-			console.log('first isb true');
 			this._process();
 		} else {
-			console.log('first isb false');
 			var _this = this;
 			this._i = setInterval(function() {
 				var now = new Date();
 				if (isb(now, _this._d)) {
-					console.log('isb true');
 					_this._process();
 					clearInterval(_this._i);
 				}

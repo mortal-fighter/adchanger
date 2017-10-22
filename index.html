@@ -5,6 +5,7 @@
 	<meta charset="utf-8">
 	<script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="./js/index.js"></script>
+	
 	<style>
 		ul {
 			margin: 10px; 
@@ -15,6 +16,7 @@
 			margin-right: 5px;
 		}
 	</style>
+
 </head>
 <body>
 	<ul>
@@ -27,21 +29,23 @@
 	</ul>
 	<script>
 		$(function() {
-			var now = new Date();
-			var time = new Date();
-
+			
+			// Пример1. Скрипт сработает через 2 секунды после загрузки страницы
+			var time = new Date(); 
 			time.setSeconds(time.getSeconds() + 2);
-			var triggerTime = new Date(
+			var time = new Date(
 				time.getFullYear(),
 				time.getMonth(),
 				time.getDate(),
 				time.getHours(),
 				time.getMinutes(),
 				time.getSeconds());
-			console.log('time to trigger =', triggerTime);
 
+			// Пример 2. Скрипт сработает в заданную дату и время	
+			/*var time = new Date(2017, 9, 21, 10, 57);*/
+			
 			var factory = new _Factory({
-				d: triggerTime, 
+				d: time, 
 				p: [
 					{
 						s: '#picture1',
